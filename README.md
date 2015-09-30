@@ -1,2 +1,2 @@
 # Pitch-Perfect
-This is training for create ios app at Udacity.
+This is training for create a iOS app at Udacity.
