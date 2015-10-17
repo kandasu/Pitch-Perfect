@@ -14,6 +14,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var recordingInProgress: UILabel!
     @IBOutlet weak var stopButton: UIButton!
+    @IBOutlet weak var tapToRecord: UILabel!
     
     var audioRecoder:AVAudioRecorder!
     var recordedAudio:RecordedAudio!
@@ -32,12 +33,14 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         //Hide the stop button
         stopButton.hidden = true
         recordButton.enabled = true
+        tapToRecord.hidden = false
     }
     
     @IBAction func recordAudio(sender: UIButton) {
         stopButton.hidden = false
         recordingInProgress.hidden = false
         recordButton.enabled = false
+        tapToRecord.hidden = true
         //TODO: Record the user's voice
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) [0] as! String
         let recordingName = "my_audio.wav"

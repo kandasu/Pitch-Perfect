@@ -161,6 +161,12 @@
                                     <action selector="stopAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gP7-q8-Jco"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsZ-9Y-VLD">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
+                                <color key="textColor" red="0.14509803921568626" green="0.28235294117647058" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -170,18 +176,23 @@
                             <constraint firstItem="2LD-tf-NDO" firstAttribute="top" secondItem="1rM-Ad-ZKD" secondAttribute="bottom" constant="50" id="c1H-Lu-Xmn"/>
                             <constraint firstAttribute="centerX" secondItem="1rM-Ad-ZKD" secondAttribute="centerX" id="q3y-xe-axP"/>
                             <constraint firstItem="EoI-rM-Wct" firstAttribute="top" secondItem="1rM-Ad-ZKD" secondAttribute="bottom" constant="8" id="rsu-F2-zjZ"/>
+                            <constraint firstAttribute="centerX" secondItem="PsZ-9Y-VLD" secondAttribute="centerX" id="uzf-Km-Re2"/>
+                            <constraint firstItem="PsZ-9Y-VLD" firstAttribute="top" secondItem="1rM-Ad-ZKD" secondAttribute="bottom" constant="8" id="zb0-cG-QSW"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="1rM-Ad-ZKD"/>
                                 <exclude reference="EoI-rM-Wct"/>
                                 <exclude reference="2LD-tf-NDO"/>
+                                <exclude reference="PsZ-9Y-VLD"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="0nb-Oq-MFv"/>
-                                <exclude reference="rsu-F2-zjZ"/>
                                 <exclude reference="PK2-mc-5XN"/>
                                 <exclude reference="q3y-xe-axP"/>
+                                <exclude reference="uzf-Km-Re2"/>
+                                <exclude reference="zb0-cG-QSW"/>
+                                <exclude reference="0nb-Oq-MFv"/>
+                                <exclude reference="rsu-F2-zjZ"/>
                                 <exclude reference="QA2-12-haH"/>
                                 <exclude reference="c1H-Lu-Xmn"/>
                             </mask>
@@ -191,12 +202,15 @@
                                 <include reference="1rM-Ad-ZKD"/>
                                 <include reference="EoI-rM-Wct"/>
                                 <include reference="2LD-tf-NDO"/>
+                                <include reference="PsZ-9Y-VLD"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="0nb-Oq-MFv"/>
-                                <include reference="rsu-F2-zjZ"/>
                                 <include reference="PK2-mc-5XN"/>
                                 <include reference="q3y-xe-axP"/>
+                                <include reference="uzf-Km-Re2"/>
+                                <include reference="zb0-cG-QSW"/>
+                                <include reference="0nb-Oq-MFv"/>
+                                <include reference="rsu-F2-zjZ"/>
                                 <include reference="QA2-12-haH"/>
                                 <include reference="c1H-Lu-Xmn"/>
                             </mask>
@@ -207,6 +221,7 @@
                         <outlet property="recordButton" destination="1rM-Ad-ZKD" id="NPc-2y-30T"/>
                         <outlet property="recordingInProgress" destination="EoI-rM-Wct" id="xsp-fX-g3V"/>
                         <outlet property="stopButton" destination="2LD-tf-NDO" id="xhb-TG-VcB"/>
+                        <outlet property="tapToRecord" destination="PsZ-9Y-VLD" id="WaC-WJ-p89"/>
                         <segue destination="dEK-IO-D48" kind="show" identifier="stopRecording" id="Tkh-6f-Tll"/>
                     </connections>
                 </viewController>
