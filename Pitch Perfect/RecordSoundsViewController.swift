@@ -40,12 +40,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         recordButton.enabled = false
         //TODO: Record the user's voice
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) [0] as! String
-        
-        //var currentDateTime = NSDate()
-        //var formatter = NSDateFormatter()
-        //formatter.dateFormat = "ddMMyyyy-HHmmss"
         let recordingName = "my_audio.wav"
-        //var recordingName = formatter.stringFromDate(currentDateTime)+".wav"
         var pathArray = [dirPath, recordingName]
         let filePath = NSURL.fileURLWithPathComponents(pathArray)
         println(filePath)
@@ -83,7 +78,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     @IBAction func stopAudio(sender: UIButton) {
         recordingInProgress.hidden = true
-        //TODO: Stop recording the user's voice
         audioRecoder.stop()
         var audioSession = AVAudioSession.sharedInstance()
         audioSession.setActive(false, error: nil)
