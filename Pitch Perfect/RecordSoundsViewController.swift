@@ -20,7 +20,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     var recordedAudio:RecordedAudio!
 
     override func viewWillAppear(animated: Bool) {
-        //Hide the stop button
         stopButton.hidden = true
         recordButton.enabled = true
         tapToRecord.hidden = false
@@ -31,17 +30,16 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         recordingInProgress.hidden = false
         recordButton.enabled = false
         tapToRecord.hidden = true
-        //TODO: Record the user's voice
+
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) [0] as! String
         let recordingName = "my_audio.wav"
         var pathArray = [dirPath, recordingName]
         let filePath = NSURL.fileURLWithPathComponents(pathArray)
         println(filePath)
         
-        // Setup audio sesstion
         var session = AVAudioSession.sharedInstance()
         session.setCategory(AVAudioSessionCategoryPlayAndRecord, error: nil)
-        // Initialize and prepare the recorder
+
         audioRecoder = AVAudioRecorder(URL: filePath, settings: nil, error: nil)
         audioRecoder.delegate = self
         audioRecoder.meteringEnabled = true
