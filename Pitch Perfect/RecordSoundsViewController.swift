@@ -54,9 +54,16 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
             
             performSegueWithIdentifier("stopRecording", sender: recordedAudio)
         } else {
-            println("Recording was not successful")
             recordButton.enabled = true
             stopButton.hidden = true
+
+            println("Recording was not successful")
+
+            let alertController = UIAlertController(title: "Not successful", message: "Recording was not successful. Please try again.", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+
+            presentViewController(alertController, animated: true, completion: nil)
         }
     }
     
